@@ -2,9 +2,11 @@
   "name": "swift-string-counter-web",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +16,7 @@
     "@wasmer/wasi": "^0.12.0",
     "@wasmer/wasmfs": "^0.12.0",
     "path-browserify": "^1.0.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
   }
 }
