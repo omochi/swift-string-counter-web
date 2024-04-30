@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "target": "ESNext",
+    "outDir": "js",
+    "lib": ["DOM", "ES2020", "ES2021.WeakRef"],
+    "isolatedModules": true,
+    "sourceMap": true
+  },
+  "rootDir": "src"
+}
