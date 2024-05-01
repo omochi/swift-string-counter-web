@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
     <script type="module">
         import { load } from "/src/loader/load.ts";
-        load("/.build/wasm32-unknown-wasi/debug/StringCounter.wasm");
+        import wasmURL from "/.build/wasm32-unknown-wasi/debug/StringCounter.wasm?url";
+        load(wasmURL);
     </script>
 </head>
 <body>

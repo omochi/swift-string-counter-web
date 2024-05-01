@@ -15,9 +15,9 @@
 import { WasmRunner } from "./WasmRunner";
 import { SwiftRuntime } from "../JavaScriptKit/Runtime/src/index";
 
-const startWasiTask = async (exePath: string) => {
+const startWasiTask = async (wasmURL: string) => {
   // Fetch our Wasm File
-  const response = await fetch(exePath);
+  const response = await fetch(wasmURL);
   const responseArrayBuffer = await response.arrayBuffer();
 
   const wasmRunner = WasmRunner(false, SwiftRuntime);
@@ -34,9 +34,9 @@ function handleError(e: any) {
   }
 }
 
-export function load(exePath: string) {
+export function load(wasmURL: string) {
   try {
-    startWasiTask(exePath).catch(handleError);
+    startWasiTask(wasmURL).catch(handleError);
   } catch (e) {
     handleError(e);
   }
