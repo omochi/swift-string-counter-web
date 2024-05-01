@@ -2,7 +2,7 @@ import React
 
 struct CardHeaderView: Component {
     func render() -> Node {
-        func cellStyle(height: String = "28px") -> String {
+        func cellStyle(height: String = "18px") -> String {
             return """
             display: flex;
             align-items: center;
@@ -13,14 +13,13 @@ struct CardHeaderView: Component {
         return div(
             attributes: [
                 "style": """
-                    margin-right: 16px;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 8px;
-                    -- border: solid 1px var(--gray-300);
-                    -- border-radius: 4px;
-                    padding: 9px;
+                    border: solid 1px var(--gray-300);
+                    border-radius: 4px;
+                    padding: 8px;
                 """
             ]
         ) {
@@ -37,7 +36,7 @@ struct CardHeaderView: Component {
             }
 
             div(
-                attributes: ["style": cellStyle(height: "64px")]
+                attributes: ["style": cellStyle(height: "40px")]
             ) {
                 "unicode scalar"
             }

@@ -1,7 +1,6 @@
 import React
 
 struct RootView: Component {
-
     @State var text: String = ""
 
     func render() -> Node {
@@ -15,36 +14,36 @@ struct RootView: Component {
         return div(
             attributes: [
                 "style": """
-                    margin: 32px;
-                    -- width: 400px;
                     display: flex;
                     flex-direction: column;
-                    gap: 32px;
                 """
             ]
         ) {
-            textarea(
-                attributes: [
-                    "rows": "4"
-                ],
-                listeners: [
-                    "input": onTextChange
-                ]
-            )
+            TitleBarView()
+
             div(
                 attributes: [
                     "style": """
                         display: flex;
-                        gap: 32px 8px;
-                        flex-wrap: wrap;
+                        flex-direction: column;
+                        gap: 16px;
                     """
                 ]
             ) {
-                CardHeaderView()
 
-                cards.map { (card) in
-                    CardView(key: card.byteOffset, card: card)
-                }
+                textarea(
+                    attributes: [
+                        "rows": "4",
+                        "style": """
+                            margin: 0px 16px;
+                        """
+                    ],
+                    listeners: [
+                        "input": onTextChange
+                    ]
+                )
+
+                CardListView(cards: cards)
             }
         }
     }

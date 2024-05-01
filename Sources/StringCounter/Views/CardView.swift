@@ -13,7 +13,7 @@ struct CardView: Component {
             var s = """
             display: flex;
             align-items: center;
-            height: 28px;
+            height: 18px;
             """
             if let font {
                 s += "font-family: \(font);"
@@ -47,18 +47,30 @@ struct CardView: Component {
             }
 
             div(
-                attributes: ["style": cellStyle(font: "monospace")]
+                attributes: [
+                    "style": """
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 4px;
+                    """
+                ]
             ) {
-                if let scalar = card.scalar {
-                    String(format: "U+%04X", scalar.value)
-                }
-            }
 
-            div(
-                attributes: ["style": cellStyle()]
-            ) {
-                if let scalar = card.scalar {
-                    scalar.description
+                div(
+                    attributes: ["style": cellStyle(font: "monospace")]
+                ) {
+                    if let scalar = card.scalar {
+                        String(format: "U+%04X", scalar.value)
+                    }
+                }
+
+                div(
+                    attributes: ["style": cellStyle()]
+                ) {
+                    if let scalar = card.scalar {
+                        scalar.description
+                    }
                 }
             }
 
