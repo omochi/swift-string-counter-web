@@ -1,0 +1,23 @@
+name: publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/deploy-pages@v4
