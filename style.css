@@ -1,4 +1,9 @@
+/* 
+    https://v2.chakra-ui.com/docs/styled-system/theme
+*/
+
 :root {
+    --gray-50: #F7FAFC;
     --gray-100: #EDF2F7;
     --gray-200: #E2E8F0;
     --gray-300: #CBD5E0;
@@ -7,6 +12,8 @@
     --gray-800: #1A202C;
     --gray-900: #171923;
     --blue-400: #4299E1;
+    --blue-500: #3182CE;
+    --blue-600: #2B6CB0;
 }
 
 * {
@@ -14,7 +21,7 @@
     padding: 0px;
 }
 
-html, input, textarea {
+html, input, textarea, button {
     font-family: sans-serif;
     font-size: 14px;
     color: var(--gray-700);
@@ -25,15 +32,45 @@ textarea {
     line-height: 1.5;
     border-radius: 8px;
     border-width: 1px;
-    border-color: var(--gray-200);
+    border-color: var(--gray-300);
     outline: none;
 }
 
 textarea:hover {
-    border-color: var(--gray-300);
+    border-color: var(--gray-400);
 }
 
 textarea:focus-visible {
     border-color: var(--blue-400);
     box-shadow: 0px 0px 0px 1px var(--blue-400);
+}
+
+a {
+    color: var(--blue-500);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--blue-500);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    appearance: none;
+    background-color: var(--gray-100);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.button:hover {
+    background-color: var(--gray-200);
+}
+
+.button:active {
+    background-color: var(--gray-300);
 }

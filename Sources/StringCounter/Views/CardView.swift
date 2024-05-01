@@ -24,13 +24,13 @@ struct CardView: Component {
         return div(
             attributes: [
                 "style": """
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 8px;
-                    border: solid 1px var(--gray-300);
-                    border-radius: 4px;
-                    padding: 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                border: 1px solid var(--gray-300);
+                border-radius: 8px;
+                padding: 8px;
                 """
             ]
         ) {
@@ -49,10 +49,10 @@ struct CardView: Component {
             div(
                 attributes: [
                     "style": """
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 4px;
                     """
                 ]
             ) {

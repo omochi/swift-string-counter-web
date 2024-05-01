@@ -34,6 +34,7 @@ struct RootView: Component {
                 textarea(
                     attributes: [
                         "rows": "4",
+                        "placeholder": "input your string here",
                         "style": """
                             margin: 0px 16px;
                         """

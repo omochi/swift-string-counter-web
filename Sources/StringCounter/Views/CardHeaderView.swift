@@ -17,8 +17,8 @@ struct CardHeaderView: Component {
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 8px;
-                    border: solid 1px var(--gray-300);
-                    border-radius: 4px;
+                    border: 1px solid var(--gray-300);
+                    border-radius: 8px;
                     padding: 8px;
                 """
             ]
