@@ -16,9 +16,9 @@ jobs:
         run: >
           sudo apt-get update &&
           sudo apt-get install -y
-            git libcurl4-openssl-dev libedit2 libgcc-9-dev
-            libpython3.8 libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev
-            zlib1g-dev binaryen
+          git libcurl4-openssl-dev libedit2 libgcc-9-dev
+          libpython3.8 libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev
+          zlib1g-dev binaryen
 
       - name: Download Swift
         run: curl -L -O https://download.swift.org/development/ubuntu2204/${{ env.SWIFT }}/${{ env.SWIFT }}-ubuntu22.04.tar.gz
