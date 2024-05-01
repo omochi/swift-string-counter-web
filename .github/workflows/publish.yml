@@ -36,7 +36,7 @@ jobs:
         run: bin/build
 
       - run: npm install
-      - run: npm run build
+      - run: npm run build -- --base=/swift-string-counter-web/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
