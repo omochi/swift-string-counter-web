@@ -9,56 +9,51 @@ struct CardView: Component {
     }
 
     func render() -> Node {
-        func cellStyle(font: String? = nil) -> String {
-            var s = """
-            display: flex;
-            align-items: center;
-            height: 18px;
-            """
+        func cellStyle(font: String? = nil) -> Style {
+            var s = Style()
+                .display("flex")
+                .alignItems("center")
+                .height("18px")
             if let font {
-                s += "font-family: \(font);"
+                s = s.fontFamily(font)
             }
             return s
         }
 
         return div(
-            attributes: [
-                "style": """
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                border: 1px solid var(--gray-300);
-                border-radius: 8px;
-                padding: 8px;
-                """
-            ]
+            style: .init()
+                .display("flex")
+                .flexDirection("column")
+                .alignItems("center")
+                .gap("8px")
+                .border("1px solid var(--gray-300)")
+                .borderRadius("8px")
+                .padding("8px")
         ) {
             div(
-                attributes: ["style": cellStyle(font: "monospace")]
+                style: cellStyle(font: "monospace")
             ) {
                 "\(card.byteOffset)"
             }
 
             div(
-                attributes: ["style": cellStyle(font: "monospace")]
+                style: cellStyle(font: "monospace")
             ) {
                 String(format: "0x%02X", card.byte)
             }
 
             div(
-                attributes: [
-                    "style": """
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 4px;
-                    """
-                ]
+                attributes: .init()
+                    .style("""
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 4px;
+                        """)
             ) {
 
                 div(
-                    attributes: ["style": cellStyle(font: "monospace")]
+                    style: cellStyle(font: "monospace")
                 ) {
                     if let scalar = card.scalar {
                         String(format: "U+%04X", scalar.value)
@@ -66,7 +61,7 @@ struct CardView: Component {
                 }
 
                 div(
-                    attributes: ["style": cellStyle()]
+                    style: cellStyle()
                 ) {
                     if let scalar = card.scalar {
                         scalar.description
@@ -75,7 +70,7 @@ struct CardView: Component {
             }
 
             div(
-                attributes: ["style": cellStyle()]
+                style: cellStyle()
             ) {
                 if let char = card.char {
                     char.description
