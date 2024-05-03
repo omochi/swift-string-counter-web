@@ -43,13 +43,11 @@ struct CardView: Component {
             }
 
             div(
-                attributes: .init()
-                    .style("""
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 4px;
-                        """)
+                style: .init()
+                    .display("flex")
+                    .flexDirection("column")
+                    .alignItems("center")
+                    .gap("4px")
             ) {
 
                 div(
