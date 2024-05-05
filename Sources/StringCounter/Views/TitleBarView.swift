@@ -1,35 +1,5 @@
 import React
 
-struct AboutView: Component {
-    func render() -> Node {
-        return div(
-            attributes: [
-                "style": """
-                margin: 0px 16px 16px;
-                """
-            ]
-        ) {
-            p {
-                "このページでは Swift による文字の数え上げ結果を調べることができます。"
-                "実際に Swift によって実装され、 Wasm にコンパイルすることであなたのブラウザ上で実行しています。"
-            }
-            p {
-                "HTML のレンダリングには "
-
-                a(
-                    attributes: [
-                        "href": "https://github.com/omochi/swift-react"
-                    ]
-                ) {
-                    "Swift React"
-                }
-
-                " を利用しています。"
-            }
-        }
-    }
-}
-
 struct TitleBarView: Component {
     @State var showsAbout: Bool = false
 
@@ -40,63 +10,47 @@ struct TitleBarView: Component {
         }
 
         return div(
-            attributes: [
-                "style": """
-                display: flex;
-                flex-direction: column;
-                """
-            ]
+            style: .init()
+                .display("flex")
+                .flexDirection("column")
         ) {
             div(
-                attributes: [
-                    "style": """
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin: 16px;
-                    """
-                ]
+                style: .init()
+                    .display("flex")
+                    .alignItems("center")
+                    .justifyContent("space-between")
+                    .margin("16px")
             ) {
                 span(
-                    attributes: [
-                        "style": """
-                        font-size: 20px;
-                        font-weight: bold;
-                        """
-                    ]
+                    style: .init()
+                        .fontSize("20px")
+                        .fontWeight("bold")
                 ) {
                     "Swift String Counter"
                 }
 
                 div(
-                    attributes: [
-                        "style": """
-                        display: flex;
-                        align-items: center;
-                        gap: 16px;
-                        """
-                    ]
+                    style: .init()
+                        .display("flex")
+                        .alignItems("center")
+                        .gap("16px")
                 ) {
                     button(
-                        attributes: [
-                            "class": "button",
-                        ],
-                        listeners: [
-                            "click": onAboutButton
-                        ]
+                        attributes: .init()
+                            .class("button"),
+                        listeners: .init()
+                            .click(onAboutButton)
                     ) {
                         "About"
                     }
 
                     a(
-                        attributes: [
-                            "href": "https://github.com/omochi/swift-string-counter-web"
-                        ]
+                        attributes: .init()
+                            .href("https://github.com/omochi/swift-string-counter-web")
                     ) {
                         button(
-                            attributes: [
-                                "class": "button",
-                            ]
+                            attributes: .init()
+                                .class("button")
                         ) {
                             "GitHub"
                         }

@@ -5,14 +5,12 @@ struct CardListView: Component {
 
     func render() -> Node {
         return div(
-            attributes: [
-                "style": """
-                    margin: 0px 16px;
-                    display: flex;
-                    gap: 16px 8px;
-                    flex-wrap: wrap;
-                """
-            ]
+            style: .init()
+                .margin("0px 16px")
+                .display("flex")
+                .gap("16px 8px")
+                .flexWrap("wrap")
+
         ) {
             CardHeaderView()
 

@@ -12,36 +12,27 @@ struct RootView: Component {
         let cards = Card.make(from: text)
 
         return div(
-            attributes: [
-                "style": """
-                    display: flex;
-                    flex-direction: column;
-                """
-            ]
+            style: .init()
+                .display("flex")
+                .flexDirection("column")
         ) {
             TitleBarView()
 
             div(
-                attributes: [
-                    "style": """
-                        display: flex;
-                        flex-direction: column;
-                        gap: 16px;
-                    """
-                ]
+                style: .init()
+                    .display("flex")
+                    .flexDirection("column")
+                    .gap("16px")
             ) {
 
                 textarea(
-                    attributes: [
-                        "rows": "4",
-                        "placeholder": "input your string here",
-                        "style": """
-                            margin: 0px 16px;
-                        """
-                    ],
-                    listeners: [
-                        "input": onTextChange
-                    ]
+                    attributes: .init()
+                        .rows("4")
+                        .placeholder("input your string here"),
+                    style: .init()
+                        .margin("0px 16px"),
+                    listeners: .init()
+                        .input(onTextChange)
                 )
 
                 CardListView(cards: cards)

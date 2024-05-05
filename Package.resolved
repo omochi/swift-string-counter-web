@@ -1,5 +1,5 @@
 {
-  "originHash" : "a89e9c01dd09e0d6bbfd7ad12e500d78134fefd95f97d895f42a0c4036045611",
+  "originHash" : "ae914efbdb2da9e41916baa10a832113ff33cee5cc5798890be618c2cf8fac04",
   "pins" : [
     {
       "identity" : "javascriptkit",
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/omochi/swift-react",
       "state" : {
-        "revision" : "702865890bf4fb17d04b7fee72e29229e1260e21",
-        "version" : "0.1.0"
+        "revision" : "19644da253ff9269b848699ff7a2b81f9e6a40cf",
+        "version" : "0.2.0"
       }
     }
   ],
