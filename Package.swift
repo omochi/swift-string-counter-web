@@ -9,8 +9,8 @@ let package = Package(
         .executable(name: "StringCounter", targets: ["StringCounter"])
     ],
     dependencies: [
-//        .package(url: "https://github.com/omochi/swift-react", from: "0.1.0")
-        .package(path: "../swift-react")
+        .package(url: "https://github.com/omochi/swift-react", from: "0.2.0")
+//        .package(path: "../swift-react")
     ],
     targets: [
         .executableTarget(
